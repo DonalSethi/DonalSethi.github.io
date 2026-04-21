@@ -7,19 +7,18 @@
 
 <style>
 :root{
-  --bg:#0f0f1a;
-  --card:#1a1a2e;
-  --primary:#8b5cf6;
-  --secondary:#ff2e88;
-  --accent:#00f5d4;
-  --text:#f3f4f6;
+  --lavender:#e6dcff;
+  --pink:#ffd1ec;
+  --mint:#b9ffe9;
+  --primary:#7b5cff;
+  --secondary:#ff4fa3;
+  --text:#2d2a32;
 }
 
 body{
   margin:0;
   font-family:'Poppins',sans-serif;
-  background: radial-gradient(circle at top left, #8b5cf6, #0f0f1a 40%),
-              radial-gradient(circle at bottom right, #ff2e88, #0f0f1a 50%);
+  background:linear-gradient(135deg,var(--lavender),var(--pink));
   color:var(--text);
 }
 
@@ -36,18 +35,14 @@ header{
 .logo{
   font-weight:800;
   font-size:22px;
-  color:var(--accent);
+  color:var(--primary);
 }
 
 nav a{
   margin-left:15px;
   text-decoration:none;
   font-weight:600;
-  color:#ddd;
-}
-
-nav a:hover{
-  color:var(--accent);
+  color:#333;
 }
 
 /* Hero */
@@ -55,10 +50,9 @@ nav a:hover{
   margin-top:40px;
   padding:30px;
   border-radius:20px;
-  background:rgba(255,255,255,0.05);
+  background:linear-gradient(135deg, rgba(255,255,255,0.7), rgba(185,255,233,0.4));
   backdrop-filter:blur(12px);
-  border:1px solid rgba(255,255,255,0.08);
-  box-shadow:0 0 25px rgba(139,92,246,0.2);
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
 .title{
@@ -71,7 +65,7 @@ nav a:hover{
 
 .lead{
   margin-top:10px;
-  color:#ccc;
+  color:#444;
 }
 
 .btn{
@@ -83,23 +77,24 @@ nav a:hover{
   color:white;
   font-weight:600;
   cursor:pointer;
-  box-shadow:0 0 15px rgba(255,46,136,0.6);
+  box-shadow:0 6px 15px rgba(255,79,163,0.4);
 }
 
 /* Sections */
 section{margin-top:50px}
 
 h2{
-  color:var(--accent);
+  color:var(--primary);
+  margin-bottom:15px;
 }
 
 /* Cards */
 .card{
-  background:rgba(255,255,255,0.05);
+  background:linear-gradient(135deg, rgba(255,255,255,0.7), rgba(185,255,233,0.4));
   padding:20px;
   border-radius:18px;
   backdrop-filter:blur(12px);
-  border:1px solid rgba(255,255,255,0.08);
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
 /* Projects */
@@ -112,14 +107,14 @@ h2{
 .proj{
   padding:20px;
   border-radius:18px;
-  background:var(--card);
+  background:linear-gradient(135deg,var(--pink),var(--mint));
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
   transition:0.3s;
-  border:1px solid rgba(255,255,255,0.08);
 }
 
 .proj:hover{
   transform:translateY(-6px);
-  box-shadow:0 0 25px rgba(0,245,212,0.5);
+  box-shadow:0 12px 30px rgba(123,92,255,0.2);
 }
 
 /* Skills */
@@ -132,15 +127,15 @@ h2{
 .skill-card{
   padding:20px;
   border-radius:18px;
-  background:rgba(255,255,255,0.05);
+  background:linear-gradient(135deg, rgba(255,255,255,0.7), rgba(185,255,233,0.4));
   backdrop-filter:blur(12px);
-  border:1px solid rgba(255,255,255,0.08);
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
   transition:0.3s;
 }
 
 .skill-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 0 20px rgba(139,92,246,0.4);
+  transform:translateY(-6px) scale(1.02);
+  box-shadow:0 12px 30px rgba(123,92,255,0.2);
 }
 
 .skill-card h3{
@@ -150,14 +145,15 @@ h2{
 
 .skill-card p{
   margin:0;
-  color:#ccc;
+  color:#444;
+  font-size:14px;
 }
 
 /* Footer */
 footer{
   margin-top:40px;
   text-align:center;
-  color:#888;
+  color:#555;
 }
 </style>
 </head>
@@ -265,7 +261,7 @@ footer{
 </section>
 
 <footer>
-  © Donal Sethi — Neon Portfolio ⚡
+  © Donal Sethi — Pink & Mint Portfolio 🌸
 </footer>
 
 </div>
