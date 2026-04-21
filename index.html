@@ -1,104 +1,133 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Donal Sethi — Portfolio</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Donal Sethi — Portfolio</title>
 
-  <style>
-    body{
-      margin:0;
-      font-family: 'Poppins', sans-serif;
-      background:#f7f7fb;
-      color:#333;
-    }
+<style>
+:root{
+  --bg:#fdfcfb;
+  --lavender:#e6dcff;
+  --peach:#ffe5d9;
+  --mint:#d9fff3;
+  --primary:#7b5cff;
+  --secondary:#ff8fb1;
+  --text:#2d2a32;
+}
 
-    .wrap{max-width:1000px;margin:auto;padding:30px}
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,var(--lavender),var(--peach));
+  color:var(--text);
+}
 
-    header{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
+/* Layout */
+.wrap{max-width:1100px;margin:auto;padding:30px}
 
-    .logo{
-      font-weight:800;
-      font-size:24px;
-      color:#6c4cff;
-    }
+/* Header */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 
-    nav a{
-      margin-left:15px;
-      text-decoration:none;
-      color:#333;
-      font-weight:600;
-    }
+.logo{
+  font-weight:800;
+  font-size:22px;
+  color:var(--primary);
+}
 
-    .hero{
-      margin-top:40px;
-    }
+nav a{
+  margin-left:15px;
+  text-decoration:none;
+  font-weight:600;
+  color:#333;
+}
 
-    .title{
-      font-size:32px;
-      font-weight:800;
-      color:#6c4cff;
-    }
+/* Hero */
+.hero{
+  margin-top:40px;
+  padding:30px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.6);
+  backdrop-filter:blur(10px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
 
-    .lead{
-      margin-top:10px;
-      color:#555;
-    }
+.title{
+  font-size:34px;
+  font-weight:800;
+  background:linear-gradient(90deg,var(--primary),var(--secondary));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
 
-    .btn{
-      margin-top:15px;
-      padding:10px 18px;
-      border:none;
-      background:#6c4cff;
-      color:white;
-      border-radius:8px;
-      cursor:pointer;
-    }
+.lead{
+  margin-top:10px;
+  color:#444;
+}
 
-    section{
-      margin-top:40px;
-    }
+.btn{
+  margin-top:15px;
+  padding:12px 20px;
+  border:none;
+  border-radius:12px;
+  background:linear-gradient(90deg,var(--primary),var(--secondary));
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+}
 
-    h2{
-      color:#6c4cff;
-    }
+/* Sections */
+section{margin-top:40px}
 
-    .projects{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:15px;
-    }
+h2{color:var(--primary)}
 
-    .card{
-      padding:15px;
-      background:white;
-      border-radius:10px;
-      box-shadow:0 4px 10px rgba(0,0,0,0.05);
-    }
+/* Cards */
+.card{
+  background:white;
+  padding:20px;
+  border-radius:16px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.06);
+}
 
-    .skills{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-    }
+/* Projects */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;
+}
 
-    .chip{
-      padding:6px 12px;
-      background:#eae8ff;
-      border-radius:20px;
-      font-size:13px;
-    }
+.proj{
+  padding:20px;
+  border-radius:16px;
+  background:linear-gradient(135deg,var(--peach),var(--lavender));
+}
 
-    footer{
-      margin-top:40px;
-      text-align:center;
-      color:#777;
-    }
-  </style>
+/* Skills */
+.skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.chip{
+  padding:8px 14px;
+  border-radius:20px;
+  background:linear-gradient(90deg,var(--mint),var(--lavender));
+  font-size:13px;
+  font-weight:600;
+}
+
+/* Footer */
+footer{
+  margin-top:40px;
+  text-align:center;
+  color:#555;
+}
+</style>
 </head>
 
 <body>
@@ -118,20 +147,22 @@
 <div class="hero">
   <h1 class="title">Aspiring Software Developer</h1>
   <p class="lead">
-    I am a BTech CSE student passionate about programming, web development, 
-    and problem-solving. I enjoy building projects and continuously improving 
-    my skills in Data Structures and modern technologies.
+    I am a BTech CSE student passionate about programming, web development,
+    and problem-solving. I enjoy building projects and improving my skills in
+    Data Structures and modern technologies.
   </p>
   <button class="btn">View Projects</button>
 </div>
 
 <section id="about">
   <h2>About Me</h2>
-  <p>
-    I am currently pursuing BTech in Computer Science. I am focused on building
-    a strong foundation in programming and actively working on real-world projects.
-    I am eager to learn, grow, and contribute to meaningful tech solutions.
-  </p>
+  <div class="card">
+    <p>
+      I am currently pursuing BTech in Computer Science. I am focused on building
+      strong programming fundamentals and creating real-world projects. I enjoy
+      learning new technologies and continuously improving my problem-solving skills.
+    </p>
+  </div>
 </section>
 
 <section id="projects">
@@ -139,19 +170,19 @@
 
   <div class="projects">
 
-    <div class="card">
+    <div class="proj">
       <h3>Portfolio Website</h3>
-      <p>Personal portfolio built using HTML and CSS.</p>
+      <p>Responsive personal portfolio built using HTML & CSS.</p>
       <small>Tech: HTML, CSS</small>
     </div>
 
-    <div class="card">
+    <div class="proj">
       <h3>To-Do List App</h3>
-      <p>A simple task manager to add and delete tasks.</p>
+      <p>Task manager with add/delete functionality.</p>
       <small>Tech: HTML, CSS, JavaScript</small>
     </div>
 
-    <div class="card">
+    <div class="proj">
       <h3>DSA Practice</h3>
       <p>Collection of solved data structure problems.</p>
       <small>Tech: C++</small>
@@ -175,12 +206,14 @@
 
 <section id="contact">
   <h2>Contact</h2>
-  <p>Email: your-email@example.com</p>
-  <p>GitHub: https://github.com/donalsethi</p>
+  <div class="card">
+    <p>Email: your-email@example.com</p>
+    <p>GitHub: https://github.com/donalsethi</p>
+  </div>
 </section>
 
 <footer>
-  © Donal Sethi | Portfolio Website
+  © Donal Sethi — Pastel themed portfolio 🌸
 </footer>
 
 </div>
