@@ -7,7 +7,6 @@
 
 <style>
 :root{
-  --bg:#fdfcfb;
   --lavender:#e6dcff;
   --peach:#ffe5d9;
   --mint:#d9fff3;
@@ -52,7 +51,7 @@ nav a{
   padding:30px;
   border-radius:20px;
   background:rgba(255,255,255,0.6);
-  backdrop-filter:blur(10px);
+  backdrop-filter:blur(12px);
   box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
@@ -81,44 +80,70 @@ nav a{
 }
 
 /* Sections */
-section{margin-top:40px}
+section{margin-top:50px}
 
-h2{color:var(--primary)}
+h2{
+  color:var(--primary);
+  margin-bottom:15px;
+}
 
 /* Cards */
 .card{
-  background:white;
+  background:rgba(255,255,255,0.6);
   padding:20px;
-  border-radius:16px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.06);
+  border-radius:18px;
+  backdrop-filter:blur(12px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
 /* Projects */
 .projects{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:15px;
+  gap:18px;
 }
 
 .proj{
   padding:20px;
-  border-radius:16px;
+  border-radius:18px;
   background:linear-gradient(135deg,var(--peach),var(--lavender));
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+
+.proj:hover{
+  transform:translateY(-5px);
 }
 
 /* Skills */
-.skills{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
 }
 
-.chip{
-  padding:8px 14px;
-  border-radius:20px;
-  background:linear-gradient(90deg,var(--mint),var(--lavender));
-  font-size:13px;
-  font-weight:600;
+.skill-card{
+  padding:20px;
+  border-radius:18px;
+  background:rgba(255,255,255,0.6);
+  backdrop-filter:blur(12px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+
+.skill-card:hover{
+  transform:translateY(-6px) scale(1.02);
+}
+
+.skill-card h3{
+  margin:0 0 10px;
+  color:var(--primary);
+}
+
+.skill-card p{
+  margin:0;
+  color:#444;
+  font-size:14px;
 }
 
 /* Footer */
@@ -158,9 +183,9 @@ footer{
   <h2>About Me</h2>
   <div class="card">
     <p>
-      I am currently pursuing BTech in Computer Science. I am focused on building
-      strong programming fundamentals and creating real-world projects. I enjoy
-      learning new technologies and continuously improving my problem-solving skills.
+      I am currently pursuing BTech in Computer Science. I focus on building
+      strong programming fundamentals and real-world projects. I am eager to
+      learn, grow, and contribute to impactful tech solutions.
     </p>
   </div>
 </section>
@@ -172,7 +197,7 @@ footer{
 
     <div class="proj">
       <h3>Portfolio Website</h3>
-      <p>Responsive personal portfolio built using HTML & CSS.</p>
+      <p>Responsive personal portfolio using HTML & CSS.</p>
       <small>Tech: HTML, CSS</small>
     </div>
 
@@ -194,13 +219,33 @@ footer{
 <section id="skills">
   <h2>Skills</h2>
 
-  <div class="skills">
-    <span class="chip">HTML</span>
-    <span class="chip">CSS</span>
-    <span class="chip">JavaScript</span>
-    <span class="chip">C++</span>
-    <span class="chip">Data Structures</span>
-    <span class="chip">Git & GitHub</span>
+  <div class="skills-grid">
+
+    <div class="skill-card">
+      <h3>💻 Programming</h3>
+      <p>C++, Python</p>
+    </div>
+
+    <div class="skill-card">
+      <h3>🌐 Web Development</h3>
+      <p>HTML, CSS, JavaScript (Basics)</p>
+    </div>
+
+    <div class="skill-card">
+      <h3>🧠 Core Concepts</h3>
+      <p>Data Structures & Algorithms, OOP</p>
+    </div>
+
+    <div class="skill-card">
+      <h3>☁️ Cloud & Tools</h3>
+      <p>Cloud Computing (Basics), Git, GitHub</p>
+    </div>
+
+    <div class="skill-card">
+      <h3>⚙️ Familiar With</h3>
+      <p>Linux, Networking Fundamentals</p>
+    </div>
+
   </div>
 </section>
 
@@ -213,7 +258,7 @@ footer{
 </section>
 
 <footer>
-  © Donal Sethi — Pastel themed portfolio 🌸
+  © Donal Sethi — Pastel Portfolio 🌸
 </footer>
 
 </div>
