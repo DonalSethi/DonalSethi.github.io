@@ -4,276 +4,186 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Donal Sethi — Portfolio</title>
-  <style>
-    /* ===== Base / Theme ===== */
-    :root{
-      --bg: #fdfcfb;
-      --card: #fff;
-      --muted:#5f546b;
-      --accent-1: #f8d6e6; /* bold rose quartz */
-      --accent-2: #d8c7ff; /* lavender */
-      --accent-3: #ffe4cc; /* peach */
-      --pearl: #f2ecfa;
-      --primary:#9c3d77; /* deep mauve */
-      --secondary:#ef94c2; /* strong rose */
-      --glass: rgba(255,255,255,0.65);
-      --radius:18px;
-      font-family: 'Poppins', sans-serif;
-    }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
+  <style>
     body{
       margin:0;
-      background: radial-gradient(circle at top left, var(--accent-1), var(--bg) 40%),
-                  radial-gradient(circle at bottom right, var(--accent-2), var(--bg) 50%);
-      color:#2c2436;
-      line-height:1.5;
+      font-family: 'Poppins', sans-serif;
+      background:#f7f7fb;
+      color:#333;
     }
 
-    /* Container */
-    .wrap{max-width:1100px;margin:48px auto;padding:32px}
+    .wrap{max-width:1000px;margin:auto;padding:30px}
 
-    /* Header */
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;gap:14px;align-items:center}
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
     .logo{
-      width:72px;height:72px;border-radius:20px;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));
-      display:grid;place-items:center;font-weight:800;color:#3a1e2e;font-size:28px;box-shadow:0 6px 20px rgba(156,61,119,0.25);
-      transform:rotate(-5deg);
+      font-weight:800;
+      font-size:24px;
+      color:#6c4cff;
     }
-    .brand h1{font-size:20px;margin:0;font-weight:700;letter-spacing:0.5px}
-    .brand p{margin:0;font-size:13px;color:var(--muted)}
 
-    nav{display:flex;gap:14px}
-    .navlink{padding:10px 16px;border-radius:14px;font-size:14px;color:#3a1e2e;text-decoration:none;font-weight:600}
-    .navlink:hover{background:linear-gradient(135deg,var(--accent-3),var(--accent-1));color:#3a1e2e}
-
-    /* Hero */
-    .hero{display:grid;grid-template-columns:1fr 360px;gap:32px;margin-top:36px;align-items:center}
-    .intro{background:var(--glass);backdrop-filter:blur(10px);padding:30px;border-radius:20px;box-shadow:0 14px 36px rgba(156,61,119,0.15)}
-    .eyebrow{font-size:14px;color:var(--muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px}
-    .title{font-size:36px;margin:0 0 16px;font-weight:800;background:linear-gradient(90deg,var(--primary),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-    .lead{color:#3c3047;margin-bottom:20px;font-size:16px}
-    .cta-row{display:flex;gap:14px;margin-top:16px}
-    .btn{padding:12px 20px;border-radius:14px;border:none;background:linear-gradient(90deg,var(--primary),var(--secondary));color:white;font-weight:700;cursor:pointer;transition:transform 0.2s}
-    .btn:hover{transform:translateY(-2px)}
-    .ghost{padding:12px 18px;border-radius:14px;background:transparent;border:2px solid var(--primary);font-weight:600;color:var(--primary)}
-
-    /* Card stack */
-    .card-grid{margin-top:22px;display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-    .card{background:var(--card);padding:16px;border-radius:14px;box-shadow:0 6px 20px rgba(60,40,70,0.08)}
-    .small{font-size:13px;color:var(--muted)}
-
-    /* Profile right column */
-    .profile{background:linear-gradient(180deg,var(--accent-2),var(--accent-3));padding:24px;border-radius:20px;box-shadow:0 8px 28px rgba(156,61,119,0.15)}
-    .avatar{width:100%;height:260px;border-radius:14px;background:linear-gradient(180deg,#fff2f7,#efeaff);display:flex;align-items:center;justify-content:center;flex-direction:column;box-shadow:inset 0 0 24px rgba(156,61,119,0.1)}
-    .avatar svg{width:92px;height:92px;opacity:0.9}
-    .name{margin-top:12px;font-weight:700;font-size:18px}
-    .role{color:var(--muted);font-size:14px}
-
-    /* Section titles */
-    section{margin-top:42px}
-    .section-title{display:flex;align-items:end;gap:10px}
-    .section-title h2{margin:0;font-size:22px;font-weight:700;color:var(--primary)}
-    .section-title p{margin:0;color:var(--muted);font-size:13px}
-
-    /* Projects */
-    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
-    .proj{padding:20px;border-radius:16px;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));min-height:130px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 10px 24px rgba(156,61,119,0.15)}
-    .proj h3{margin:0 0 10px;font-weight:700}
-    .proj p{margin:0;font-size:14px;color:#3a1e2e}
-
-    /* Skills */
-    .skills{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}
-    .chip{padding:8px 14px;border-radius:999px;background:linear-gradient(90deg,var(--accent-1),var(--accent-3));font-weight:600;font-size:13px;color:#3a1e2e;box-shadow:0 4px 10px rgba(156,61,119,0.1)}
-
-    /* Contact */
-    .contact{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:14px}
-    .contact form{background:var(--card);padding:18px;border-radius:14px;box-shadow:0 8px 24px rgba(60,40,70,0.08)}
-    label{font-size:13px;color:var(--muted);font-weight:600}
-    input,textarea{width:100%;padding:12px;border-radius:12px;border:1px solid rgba(100,80,100,0.1);margin-top:8px;font-size:14px}
-    textarea{min-height:120px;resize:vertical}
-
-    /* Footer */
-    footer{margin-top:40px;padding:18px;border-radius:14px;background:linear-gradient(90deg,var(--accent-2),var(--accent-3));text-align:center;color:#3a1e2e;font-weight:600;box-shadow:0 6px 16px rgba(156,61,119,0.15)}
-
-    /* Responsive */
-    @media (max-width:980px){
-      .hero{grid-template-columns:1fr}
-      .projects{grid-template-columns:repeat(2,1fr)}
-      .wrap{padding:22px}
+    nav a{
+      margin-left:15px;
+      text-decoration:none;
+      color:#333;
+      font-weight:600;
     }
-    @media (max-width:640px){
-      .projects{grid-template-columns:1fr}
-      header{flex-direction:column;align-items:flex-start;gap:12px}
-      .navlink{display:none}
+
+    .hero{
+      margin-top:40px;
+    }
+
+    .title{
+      font-size:32px;
+      font-weight:800;
+      color:#6c4cff;
+    }
+
+    .lead{
+      margin-top:10px;
+      color:#555;
+    }
+
+    .btn{
+      margin-top:15px;
+      padding:10px 18px;
+      border:none;
+      background:#6c4cff;
+      color:white;
+      border-radius:8px;
+      cursor:pointer;
+    }
+
+    section{
+      margin-top:40px;
+    }
+
+    h2{
+      color:#6c4cff;
+    }
+
+    .projects{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:15px;
+    }
+
+    .card{
+      padding:15px;
+      background:white;
+      border-radius:10px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .skills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .chip{
+      padding:6px 12px;
+      background:#eae8ff;
+      border-radius:20px;
+      font-size:13px;
+    }
+
+    footer{
+      margin-top:40px;
+      text-align:center;
+      color:#777;
     }
   </style>
 </head>
+
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <div class="logo">DS</div>
-        <div>
-          <h1>Donal Sethi</h1>
-          <p>Continuous learner • Creative problem-solver • Business-minded</p>
-        </div>
-      </div>
 
-      <nav aria-label="Primary">
-        <a class="navlink" href="#about">About</a>
-        <a class="navlink" href="#projects">Works</a>
-        <a class="navlink" href="#skills">Skills</a>
-        <a class="navlink" href="#contact">Contact</a>
-      </nav>
-    </header>
+<div class="wrap">
 
-    <main>
-      <div class="hero">
-        <div class="intro">
-          <div class="eyebrow">Hello — I’m Donal</div>
-          <h2 class="title">I craft thoughtful ideas and impactful solutions for business and creativity.</h2>
-          <p class="lead">I enjoy projects that blend design, strategy, and meaningful results. I thrive in diverse collaborations while delivering strong independent contributions.</p>
+<header>
+  <div class="logo">Donal Sethi</div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-          <div class="card-grid">
-            <div class="card">
-              <div class="small">Focus Areas</div>
-              <strong>Business Strategy • Product Thinking • Creative Direction</strong>
-            </div>
-            <div class="card">
-              <div class="small">Interests</div>
-              <strong>Dancing • Reading • Journaling • Creative Art</strong>
-            </div>
-          </div>
+<div class="hero">
+  <h1 class="title">Aspiring Software Developer</h1>
+  <p class="lead">
+    I am a BTech CSE student passionate about programming, web development, 
+    and problem-solving. I enjoy building projects and continuously improving 
+    my skills in Data Structures and modern technologies.
+  </p>
+  <button class="btn">View Projects</button>
+</div>
 
-          <div class="cta-row">
-            <button class="btn">View Works</button>
-            <button class="ghost">Download CV</button>
-          </div>
-        </div>
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    I am currently pursuing BTech in Computer Science. I am focused on building
+    a strong foundation in programming and actively working on real-world projects.
+    I am eager to learn, grow, and contribute to meaningful tech solutions.
+  </p>
+</section>
 
-        <aside class="profile">
-          <div class="avatar">
-            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="0" y="0" width="100" height="100" rx="14" fill="url(#g)"/>
-              <defs>
-                <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#fff6fb"/>
-                  <stop offset="1" stop-color="#f5f0ff"/>
-                </linearGradient>
-              </defs>
-              <g transform="translate(16,16)">
-                <circle cx="34" cy="20" r="12" fill="#e9d9e8"/>
-                <rect x="6" y="44" width="56" height="26" rx="8" fill="#f6eefa"/>
-              </g>
-            </svg>
-            <div class="name">Donal Sethi</div>
-            <div class="role">Aspiring Business & Creative Professional</div>
-          </div>
+<section id="projects">
+  <h2>Projects</h2>
 
-          <div style="margin-top:14px;display:flex;gap:10px;flex-direction:column">
-            <div class="card small">Age: 19 — Location: India</div>
-            <div class="card small">Core values: Honesty • Empathy • Respect</div>
-          </div>
-        </aside>
-      </div>
+  <div class="projects">
 
-      <section id="about">
-        <div class="section-title"><h2>About</h2><p>— short & focused</p></div>
-        <div style="margin-top:14px;display:flex;gap:20px;flex-wrap:wrap">
-          <div style="flex:1;min-width:260px;background:var(--card);padding:20px;border-radius:14px;box-shadow:0 10px 28px rgba(156,61,119,0.08)">
-            <p>I’m passionate about continuous learning and growth. I thrive on creative problem-solving and building strategies that make a difference. My work blends business insight with empathetic design to drive meaningful change.</p>
-          </div>
+    <div class="card">
+      <h3>Portfolio Website</h3>
+      <p>Personal portfolio built using HTML and CSS.</p>
+      <small>Tech: HTML, CSS</small>
+    </div>
 
-          <div style="width:320px;min-width:220px">
-            <div class="card small">Hobbies</div>
-            <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap">
-              <span class="chip">Dancing</span>
-              <span class="chip">Reading</span>
-              <span class="chip">Journaling</span>
-              <span class="chip">Creative Art</span>
-            </div>
-          </div>
-        </div>
-      </section>
+    <div class="card">
+      <h3>To-Do List App</h3>
+      <p>A simple task manager to add and delete tasks.</p>
+      <small>Tech: HTML, CSS, JavaScript</small>
+    </div>
 
-      <section id="projects">
-        <div class="section-title"><h2>Selected Works</h2><p>— projects that reflect approach</p></div>
-        <div class="projects">
-          <article class="proj">
-            <div>
-              <h3>Workshop Design — Campus Git & GitHub</h3>
-              <p>Beginner-friendly structure with hands-on activities, designed to engage and empower students.</p>
-            </div>
-            <div class="small">Role: Organizer • Format: Workshop</div>
-          </article>
+    <div class="card">
+      <h3>DSA Practice</h3>
+      <p>Collection of solved data structure problems.</p>
+      <small>Tech: C++</small>
+    </div>
 
-          <article class="proj">
-            <div>
-              <h3>Club Strategy — Creative Club Launch</h3>
-              <p>Vision, mission, and student engagement plan focused on inclusivity and growth.</p>
-            </div>
-            <div class="small">Role: Co-founder • Outcome: 40+ members</div>
-          </article>
-
-          <article class="proj">
-            <div>
-              <h3>Personal Brand — Portfolio & Social</h3>
-              <p>Shaping a professional yet approachable voice through visuals, content, and strategy.</p>
-            </div>
-            <div class="small">Role: Creative Lead</div>
-          </article>
-        </div>
-      </section>
-
-      <section id="skills">
-        <div class="section-title"><h2>Skills</h2><p>— what I bring</p></div>
-        <div class="skills">
-          <span class="chip">Business Strategy</span>
-          <span class="chip">Product Thinking</span>
-          <span class="chip">Workshop Facilitation</span>
-          <span class="chip">Creative Direction</span>
-          <span class="chip">Communication</span>
-          <span class="chip">Collaboration</span>
-        </div>
-      </section>
-
-      <section id="contact">
-        <div class="section-title"><h2>Contact</h2><p>— say hello</p></div>
-        <div class="contact">
-          <form>
-            <label for="name">Name</label>
-            <input id="name" placeholder="Your name" />
-
-            <label for="email">Email</label>
-            <input id="email" placeholder="you@example.com" />
-
-            <label for="message">Message</label>
-            <textarea id="message" placeholder="Tell me what you're working on..."></textarea>
-
-            <div style="margin-top:12px;display:flex;gap:12px"><button class="btn" type="button">Send</button><button class="ghost" type="button">Clear</button></div>
-          </form>
-
-          <div style="background:linear-gradient(180deg,var(--card),var(--pearl));padding:18px;border-radius:14px;box-shadow:0 6px 18px rgba(156,61,119,0.08)">
-            <div class="small">Quick details</div>
-            <div style="margin-top:10px">Based in India • Open to collaborations and learning opportunities • Prefers thoughtful, clear communication</div>
-            <div style="margin-top:14px" class="small">Values</div>
-            <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap">
-              <span class="chip">Honesty</span>
-              <span class="chip">Empathy</span>
-              <span class="chip">Respect</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <footer>
-        © <strong>Donal Sethi</strong> — Crafted with passion • Strong, creative & purposeful.
-      </footer>
-    </main>
   </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+
+  <div class="skills">
+    <span class="chip">HTML</span>
+    <span class="chip">CSS</span>
+    <span class="chip">JavaScript</span>
+    <span class="chip">C++</span>
+    <span class="chip">Data Structures</span>
+    <span class="chip">Git & GitHub</span>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: your-email@example.com</p>
+  <p>GitHub: https://github.com/donalsethi</p>
+</section>
+
+<footer>
+  © Donal Sethi | Portfolio Website
+</footer>
+
+</div>
+
 </body>
 </html>
-
